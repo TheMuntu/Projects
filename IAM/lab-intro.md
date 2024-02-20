@@ -1,4 +1,4 @@
-# Lab 6: Client app for the GitHub API
+# Lab 6 intro: Client app for the GitHub API
 
 This task shows how easy you can use one of the well-known OAuth2/OIDC provider like GitHub, Google or Facebook with Spring Security.
 

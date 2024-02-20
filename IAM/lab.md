@@ -32,11 +32,11 @@ Submission requirements:
         docker run -p 8081:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:17.0.1 start-dev -Dkeycloak.profile.feature.upload_scripts=enabled
          ```
         
-    *   Make hostname `sso` point to 127.0.0.1, that will be used to access keycloak services (basicaly it is aliasing localhost, IP stays the same but browsers will treat it as a separate domain - important for cookies)
+    *   Make your hostname `sso` point to 127.0.0.1, that will be used to access keycloak services (basicaly it is aliasing localhost. Your IP stays the same but the browsers will treat it as a separate domain - this is important for cookies)
     *   Access keycloak at `sso:8081`
-    *   Create realm `as_lab`
+    *   Create realm named `as_lab`
     *   Create sample user in this realm
-*   Launch sample app - installation instructions inside `iam-lab.zip`
+*   Launch the sample app attached to this asignment. The installation instructions are inside `iam-lab.zip`
     
 
 ### [](#Authentication-and-Single-Sign-On "Authentication-and-Single-Sign-On")Authentication and Single-Sign On

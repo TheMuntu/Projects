@@ -26,10 +26,8 @@ Submission requirements:
     
     *   Install keycloak using docker image [https://www.keycloak.org/getting-started/getting-started-docker](https://www.keycloak.org/getting-started/getting-started-docker)
         
-        *   To run the container use
-        
-            docker run -p 8081:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:17.0.1 start-dev -Dkeycloak.profile.feature.upload_scripts=enabled
-            
+        *   To run the container use:
+         ``` docker run -p 8081:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:17.0.1 start-dev -Dkeycloak.profile.feature.upload_scripts=enabled ```
         
     *   Make hostname `sso` point to 127.0.0.1, that will be used to access keycloak services (basicaly it is aliasing localhost, IP stays the same but browsers will treat it as a separate domain - important for cookies)
     *   Access keycloak at `sso:8081`

@@ -1,1 +1,1 @@
-# Algorithm
+# Simple personal projects

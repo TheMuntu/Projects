@@ -1,3 +1,10 @@
+# Define your Workspace variables
+
+$Subscription_ID = YOUR_SUBSCRIPTION_ID
+$Resource_Group = YOUR_RESOURCEGROUP_NAME
+$Workspace= YOUR_WORKSPACE_NAME
+$API_VERSION = YOUR_API_VERSION
+
 $NumberOfIterations = 30 # HERE WE ARE RUNNING 30 ITERATIONS OF 1000 DELETIONS. YOU MUST ADJUST BASED ON YOUR NEEDS
 
 for ($i = 1; $i -le $NumberOfIterations; $i++) { 

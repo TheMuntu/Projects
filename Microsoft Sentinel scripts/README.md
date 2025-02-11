@@ -1,0 +1,1 @@
+## Bulk Delete Threat indicators

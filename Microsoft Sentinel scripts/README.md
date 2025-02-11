@@ -16,6 +16,7 @@ The script works as follows:
 ### Usage
 
 ``` powershell
+> az login
 > az account set --subscription Your_Subscription_ID
 >.\delete_threat_indicators.ps1
 ```

@@ -1,4 +1,6 @@
-for ($i = 1; $i -le 30; $i++) { # wE ARE RUNNING 30 ITERATIONS OF 1000 DELETIONS. YOU MUST ADJUST BASED ON YOUR NEEDS
+$NumberOfIterations = 30 # HERE WE ARE RUNNING 30 ITERATIONS OF 1000 DELETIONS. YOU MUST ADJUST BASED ON YOUR NEEDS
+
+for ($i = 1; $i -le $NumberOfIterations; $i++) { 
     Write-Host "Starting iteration: $i"
 
     #Query and Save Indicators
@@ -51,4 +53,4 @@ for ($i = 1; $i -le 30; $i++) { # wE ARE RUNNING 30 ITERATIONS OF 1000 DELETIONS
     Start-Sleep -Seconds 10  # Add a delay between iterations
 }
 
-Write-Host "Script completed 30 iterations (or terminated prematurely due to errors)."
+Write-Host "Script completed $($NumberOfIterations) iterations (or terminated prematurely due to errors)."

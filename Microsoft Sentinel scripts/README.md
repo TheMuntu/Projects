@@ -30,3 +30,10 @@ Deleting indicator with name: 5dd7f72e-878b-624b-6278-afa7327a7d1e
 Successfully deleted indicator 5dd7f72e-878b-624b-6278-afa7327a7d1e.
 
 ```
+
+### Notes!
+
+When monitoring the deletion of items, you may notice that all item names follow the same convention and do not match the names displayed in the Threat Intelligence dashboard. This is because all threat indicators, regardless of their integration source, are stored under **Microsoft.SecurityInsights/threatIntelligence/main/indicators** within the Log Analytics workspace.
+
+Once an indicator is created, it is assigned a hexadecimal UUID in the format 8-4-4-4-12 (a 128-bit number) as its name, which is used for deletion in our script. This explains why it is possible to create an indicator without a name, as the UUID serves as its unique identifier.
+

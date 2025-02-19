@@ -1,4 +1,4 @@
-## Bulk Delete Threat indicators in Microsoft Sentinel
+## Automate deletion of Threat indicators in Microsoft Sentinel
 
 ### Context
 

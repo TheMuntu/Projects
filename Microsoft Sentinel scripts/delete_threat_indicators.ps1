@@ -4,15 +4,16 @@ $Subscription_ID = "YOUR_SUBSCRIPTION_ID"
 $Resource_Group = "YOUR_RESOURCEGROUP_NAME"
 $Workspace= "YOUR_WORKSPACE_NAME"
 $API_VERSION = "YOUR_API_VERSION"
+$SOURCE = "YOUR_SOURCE_NAME"
 
 $NumberOfIterations = 30 # HERE WE ARE RUNNING 30 ITERATIONS OF 1000 DELETIONS. YOU MUST ADJUST BASED ON YOUR NEEDS
 
-for ($i = 1; $i -le $NumberOfIterations; $i++) { 
+for ($i = 1; $i -le $NumberOfIterations; $i++) {
     Write-Host "Starting iteration: $i"
 
-    #Query and Save Indicators
+    #region Query and Save Indicators
     try {
-        $jsonResult = az rest --method post --url https://management.azure.com/subscriptions/$($Subscription_ID)/resourceGroups/$($Resource_Group)/providers/Microsoft.OperationalInsights/workspaces/$($Workspace)/providers/Microsoft.SecurityInsights/threatIntelligence/main/queryIndicators?api-version=$($API_VERSION) --body "{ 'pageSize': 1000, 'minConfidence': 25, 'maxConfidence': 100, 'minValidUntil': '2020-04-05T17:44:00.114052Z', 'maxValidUntil': '2050-04-25T17:44:00.114052Z', 'sources': [ 'YOUR_SOURCES_NAMES' ], 'sortBy': [ { 'itemKey': 'lastUpdatedTimeUtc', 'sortOrder': 'descending' } ] }" | ConvertFrom-Json
+        $jsonResult = az rest --method post --url https://management.azure.com/subscriptions/$($Subscription_ID)/resourceGroups/$($Resource_Group)/providers/Microsoft.OperationalInsights/workspaces/$($Workspace)/providers/Microsoft.SecurityInsights/threatIntelligence/main/queryIndicators?api-version=$($API_VERSION) --body "{ 'pageSize': 3000, 'minConfidence': 25, 'maxConfidence': 100, 'minValidUntil': '2020-04-05T17:44:00.114052Z', 'maxValidUntil': '2050-04-25T17:44:00.114052Z', 'sources': [ '$($SOURCE)' ], 'sortBy': [ { 'itemKey': 'lastUpdatedTimeUtc', 'sortOrder': 'descending' } ] }" | ConvertFrom-Json
 
         # Save the indicator names in a text file
 
